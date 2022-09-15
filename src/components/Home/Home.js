@@ -11,11 +11,12 @@ export default function Home() {
   const [subtitle, setSubtitle] = useState('');
   const [blogText, setBlogText] = useState('');
   const [textFormat, setTextFormat] = useState('left');
+  const [blogFont, setBlogFont] = useState('architect');
 
   return (
     <main>
       {/* pass the state variables as props to the presentational components */}
-      <Preview title={title} subtitle={subtitle} blogText={blogText} textFormat={textFormat} />
+      <Preview title={title} subtitle={subtitle} blogText={blogText} textFormat={textFormat} blogFont={blogFont} />
       <Editor 
         title={title} 
         setTitle={setTitle} 
@@ -25,6 +26,8 @@ export default function Home() {
         setBlogText={setBlogText}
         textFormat={textFormat}
         setTextFormat={setTextFormat}
+        blogFont={blogFont}
+        setBlogFont={setBlogFont}
       />
     </main>
   );

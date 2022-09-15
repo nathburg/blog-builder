@@ -2,7 +2,7 @@ import React from 'react';
 import './Preview.css';
 import './Preview.css';
 
-export default function Preview({ title, subtitle, blogText, textFormat }) {
+export default function Preview({ title, subtitle, blogText, textFormat, blogFont }) {
   // implement a Preview screen here
   //  Note - the HTML should have the following structure
   //  the main div should have a class of preview and the font-name prop
@@ -15,10 +15,10 @@ export default function Preview({ title, subtitle, blogText, textFormat }) {
   // </div>
 
   return (
-    <div className="preview">
+    <div className={`preview ${blogFont}`} style= {{ textAlign: textFormat }}>
       <h1>{title}</h1>
       <h3>{subtitle}</h3>
-      <p style= {{ textAlign: textFormat }}>{blogText}</p>
+      <p>{blogText}</p>
     </div>
   );
 }

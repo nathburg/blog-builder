@@ -1,8 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
 import './Editor.css';
 
-export default function Editor({ title, setTitle, subtitle, setSubtitle, blogText, setBlogText, textFormat, setTextFormat }) {
+export default function Editor({ title, setTitle, subtitle, setSubtitle, blogText, setBlogText, setTextFormat, setBlogFont }) {
   return (
     <div className="editor">
       <div className="form-control">
@@ -14,7 +13,7 @@ export default function Editor({ title, setTitle, subtitle, setSubtitle, blogTex
         <label>Subtitle</label>
       </div>
       <div className="form-control">
-        <select>
+        <select onChange={(e) => setBlogFont(e.target.value)}>
           <option value="architect">{"Architect's Daughter"}</option>
           <option value="comforter">Comforter</option>
           <option value="fredoka">Fredoka</option>
