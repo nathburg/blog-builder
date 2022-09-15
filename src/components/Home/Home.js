@@ -10,10 +10,12 @@ export default function Home() {
   const [title, setTitle] = useState('');
   const [subtitle, setSubtitle] = useState('');
   const [blogText, setBlogText] = useState('');
+  const [textFormat, setTextFormat] = useState('left');
+
   return (
     <main>
       {/* pass the state variables as props to the presentational components */}
-      <Preview title={title} subtitle={subtitle} blogText={blogText} />
+      <Preview title={title} subtitle={subtitle} blogText={blogText} textFormat={textFormat} />
       <Editor 
         title={title} 
         setTitle={setTitle} 
@@ -21,6 +23,8 @@ export default function Home() {
         setSubtitle={setSubtitle}
         blogText={blogText}
         setBlogText={setBlogText}
+        textFormat={textFormat}
+        setTextFormat={setTextFormat}
       />
     </main>
   );
